@@ -2,6 +2,7 @@ const path = require('path')
 const webpack = require('webpack')
 const package = require('../package.json')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
+const wUtils = require('./webpack-utils')
 
 const rootDir = path.resolve(__dirname, '..')
 const srcDir = path.resolve(rootDir, 'src')
