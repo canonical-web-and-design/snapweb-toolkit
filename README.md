@@ -22,7 +22,7 @@ Add the toolkit to your React project by adding `snapweb-toolkit` in your packag
 
 ```json
 {
-  dependencies: {
+  "dependencies": {
     "snapweb-toolkit": "git://github.com/ubuntudesign/snapweb-toolkit.git#master"
   }
 }
