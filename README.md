@@ -18,10 +18,14 @@ ReactDOM.render(
 
 ## Usage
 
-Add the toolkit to your React project:
+Add the toolkit to your React project by adding `snapweb-toolkit` in your package.json `dependencies` field:
 
-```
-npm install --save git://github.com/ubuntudesign/snapweb-toolkit.git#master
+```json
+{
+  dependencies: {
+    "snapweb-toolkit": "git://github.com/ubuntudesign/snapweb-toolkit.git#master"
+  }
+}
 ```
 
 Import the toolkit CSS file:
@@ -76,4 +80,3 @@ npm run watch
 ```
 
 By doing so, any change in the toolkit will trigger a rebuild, which will in turn trigger a rebuild in your own project.
-
