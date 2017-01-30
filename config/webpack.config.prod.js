@@ -4,12 +4,18 @@ const package = require('../package.json')
 const ExtractTextPlugin = require('extract-text-webpack-plugin')
 const wUtils = require('./webpack-utils')
 
+// Set to true to export each component so they can be imported individually
+const STANDALONE_COMPONENTS = false
+
 const rootDir = path.resolve(__dirname, '..')
 const srcDir = path.resolve(rootDir, 'src')
 const libDir = path.resolve(rootDir, 'lib')
 
-const entry = wUtils.componentsToEntry(require('./components'), srcDir)
-entry.bundle = path.resolve(srcDir, 'index.js')
+const components = STANDALONE_COMPONENTS? require('./components') : []
+const entry = Object.assign({},
+  wUtils.componentsToEntry(components, srcDir),
+  { bundle: path.resolve(srcDir, 'index.js') }
+)
 
 module.exports = {
 

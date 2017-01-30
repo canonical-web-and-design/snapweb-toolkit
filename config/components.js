@@ -1,3 +1,4 @@
+// All the components to be exported individually
 module.exports = [
   'classes',
   'If',
