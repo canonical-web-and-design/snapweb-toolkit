@@ -69,14 +69,14 @@ Run the watch script to recompile the changed files:
 
 ```sh
 cd snapweb-toolkit
-npm run watch
+npm start
 ```
 
-If you have a watch script in your project, you can launch it in another shell session:
+If you have a watch script in your project, launch it in another shell session, e.g.:
 
 ```sh
 cd <YOUR_PROJECT_FOLDER>
-npm run watch
+npm start
 ```
 
 By doing so, any change in the toolkit will trigger a rebuild, which will in turn trigger a rebuild in your own project.
