@@ -7,6 +7,7 @@ import defaultLogo from './assets/logo.png'
 import avatar from './assets/avatar.png'
 
 // item icons
+import iconHome from './assets/home.svg'
 import iconStore from './assets/store.svg'
 import iconSettings from './assets/settings.svg'
 
@@ -14,6 +15,7 @@ const defaultName = 'Ubuntu'
 const defaultProfileName = 'Lola Chang'
 
 const itemIcons = {
+  home: iconHome,
   store: iconStore,
   settings: iconSettings,
 }
