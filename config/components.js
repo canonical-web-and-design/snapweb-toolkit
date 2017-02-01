@@ -6,7 +6,6 @@ module.exports = [
   'Card/Card',
   'CardsList/CardsList',
   'ContentWrapper/ContentWrapper',
-  'DeviceBanner/DeviceBanner',
   'Footer/Footer',
   'Header/Header',
   'Icon/Icon',
