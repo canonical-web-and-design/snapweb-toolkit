@@ -61,15 +61,15 @@ class CardsList extends Component {
       header,
     } = this.props
     return (
-      <div className='CardsList'>
+      <section className='CardsList'>
         <div className='CardsList-title'>
           {header || (
-            <div>
+            <h1>
               {title}
               {separator? (
                 <div className='CardsList-separator' />
               ) : null}
-            </div>
+            </h1>
           )}
         </div>
         <div className='CardsList-content'>
@@ -82,7 +82,7 @@ class CardsList extends Component {
             />
           ))}
         </div>
-      </div>
+      </section>
     )
   }
 }
