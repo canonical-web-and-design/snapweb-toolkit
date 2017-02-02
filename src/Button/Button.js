@@ -10,6 +10,7 @@ export default function Button({
   label,
   loading,
   variableWidth,
+  children,
   style={},
 }) {
   return (
@@ -30,7 +31,7 @@ export default function Button({
           ? <span className='Button-spinner' />
           : null
         }
-        <span>{label}</span>
+        {children || (<span>{label}</span>)}
       </span>
     </button>
   )
