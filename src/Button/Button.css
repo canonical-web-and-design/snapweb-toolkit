@@ -1,5 +1,5 @@
 .Button {
-  min-width: 308px;
+  min-width: 220px;
   border: 1px solid #CDCDCD;
   border-radius: 3px;
   color: #333;
@@ -16,9 +16,7 @@
   align-items: center;
   padding: 6px 15px;
 }
-.Button span {
-  display: block;
-}
+
 .Button[disabled],
 .Button[disabled]:active,
 .Button[disabled]:focus {
