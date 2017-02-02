@@ -24,6 +24,10 @@ const ButtonWrapper = ({
   buttonLabel2,
   type2,
   onClick2,
+  disabled3,
+  buttonLabel3,
+  type3,
+  onClick3,
 }) => (
   <div>
     <div className='SnapPageInstallButton-price'>
@@ -45,6 +49,19 @@ const ButtonWrapper = ({
         label={buttonLabel2}
         type={type2}
         disabled={disabled2}
+      />
+    </If>
+
+    <If cond={buttonLabel3}>
+      <Button
+        style={{
+          marginRight: '10px'
+        }}
+        variableWidth={true}
+        onClick={onClick3}
+        label={buttonLabel3}
+        type={type3}
+        disabled={disabled3}
       />
     </If>
 
@@ -117,6 +134,12 @@ class SnapPageInstallButton extends Component {
             type2={'normal'}
             onClick2={() => {}}
             disabled2={false}
+
+            buttonLabel3={status === 'installed'? 'Configure' : ''}
+            type2={'normal'}
+            onClick3={() => {}}
+            disabled3={false}
+
           />
         )}
       </div>

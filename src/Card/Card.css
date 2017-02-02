@@ -67,10 +67,11 @@
 }
 .Card-action-wrapper {
   display: flex;
-  justify-content: flex-end;
+  justify-content: space-between;
+  flex-direction: row-reverse;
 }
 .Card-action {
-  padding: 0 10px;
+  padding: 0 2px;
   line-height: 1.7em;
   height: 1.7em;
   font-size: 16px;

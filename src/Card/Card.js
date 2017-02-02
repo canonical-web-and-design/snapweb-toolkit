@@ -2,6 +2,8 @@ import React, { PureComponent } from 'react'
 require('./Card.css')
 
 import classes from 'toolkit/classes'
+import If from 'toolkit/If'
+
 import RatingStars from 'toolkit/RatingStars/RatingStars'
 import ProgressBar from 'toolkit/ProgressBar/ProgressBar'
 
@@ -120,7 +122,7 @@ class Card extends PureComponent {
               <ProgressBar progress={installProgress} />
             </div>
           )}
-          <div className='Card-action-wrapper'>
+          <div className='Card-action-wrapper'>  
             <div
               className='Card-action'
               onClick={this.onActionClick}
@@ -131,6 +133,13 @@ class Card extends PureComponent {
                  : action
               }
             </div>
+            <If cond={action === 'open'}>
+              <div
+                className='Card-action'
+              >
+                {'Configure'}
+              </div>
+            </If>
           </div>
       </div>
     </div>
