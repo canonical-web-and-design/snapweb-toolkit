@@ -6,7 +6,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { Button } from 'snapweb-toolkit'
-import 'snapweb-toolkit/lib/styles.css'
+import 'snapweb-toolkit/lib/bundle.css'
 
 ReactDOM.render(
   <div>
