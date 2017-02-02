@@ -62,21 +62,17 @@ class MenuItem extends Component {
 }
 
 class Header extends Component {
-  constructor(props) {
-    super(props)
-    this.onLogoClick = this.onLogoClick.bind(this)
-    this.onMenuItemClick = this.onMenuItemClick.bind(this)
-    this.onProfileClick = this.onProfileClick.bind(this)
+  handleLogoClick = (event) => {
+    if (this.props.onLogoClick) {
+      event.currentTarget.blur()
+      this.props.onLogoClick()
+    }
   }
-  onLogoClick(event) {
-    event.currentTarget.blur()
-    this.props.onMenuItemClick('home')
-  }
-  onProfileClick(event) {
+  handleProfileClick = (event) => {
     event.currentTarget.blur()
     this.props.onMenuItemClick('settings/profile')
   }
-  onMenuItemClick(id) {
+  handleMenuItemClick = (id) => {
     this.props.onMenuItemClick(id)
   }
   render() {
@@ -98,7 +94,7 @@ class Header extends Component {
             className='Header-logo'
             role='button'
             tabIndex='0'
-            onClick={this.onLogoClick}
+            onClick={this.handleLogoClick}
           >
             <img
               src={props.logo || defaultLogo}
@@ -115,7 +111,7 @@ class Header extends Component {
                     key={item.id}
                     id={item.id}
                     name={item.name}
-                    onClick={this.onMenuItemClick}
+                    onClick={this.handleMenuItemClick}
                     current={item.id === props.currentSection}
                     currentColor={props.customColor}
                   />
@@ -127,7 +123,7 @@ class Header extends Component {
             className='Header-profile'
             role='button'
             tabIndex='0'
-            onClick={this.onProfileClick}
+            onClick={this.handleProfileClick}
           >
             <img width='24' height='24' src={avatar} alt='' />
             <span>{props.profilename || defaultProfileName}</span>
