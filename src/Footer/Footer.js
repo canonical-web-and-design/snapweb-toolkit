@@ -11,7 +11,17 @@ function Footer({
   copyright = defaultCopyright,
   logo = defaultLogo,
   name = defaultName,
+  link,
 }) {
+
+  const img = (
+    <img className='Footer-logo'
+      src={logo}
+      alt={name}
+      height='48'
+    />
+  )
+  
   return (
     <footer className='Footer'>
       {children || (
@@ -22,11 +32,14 @@ function Footer({
               {copyright}
             </p>
           </div>
-          <img className='Footer-logo'
-            src={logo}
-            alt={name}
-            height='48'
-          />
+          {link 
+            ? (
+              <a href={link} target='_blank'>
+                {img}
+              </a>
+            )
+            : img
+          }
         </div>
       )}
     </footer>
