@@ -24,7 +24,7 @@ class CardWrapper extends Component {
 
     const finalAction = (
       type? action : (
-        installProgress > -1 || id === 'add'? '' : (action || 'open')
+        installProgress > -1 ? '' : (action || 'open')
       )
     )
 
