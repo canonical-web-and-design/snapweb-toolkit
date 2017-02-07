@@ -3,7 +3,6 @@ import './Header.css'
 
 import If from 'toolkit/If'
 
-import defaultLogo from './assets/logo.png'
 import avatar from './assets/avatar.png'
 
 // item icons
@@ -11,7 +10,6 @@ import iconHome from './assets/home.svg'
 import iconStore from './assets/store.svg'
 import iconSettings from './assets/settings.svg'
 
-const defaultName = 'Ubuntu'
 const defaultProfileName = 'Lola Chang'
 
 const itemIcons = {
@@ -69,8 +67,10 @@ class Header extends Component {
     }
   }
   handleProfileClick = (event) => {
-    event.currentTarget.blur()
-    this.props.onMenuItemClick('settings/profile')
+    if (this.props.onProfileClick) {
+      event.currentTarget.blur()
+      this.props.onProfileClick()
+    }
   }
   handleMenuItemClick = (id) => {
     this.props.onMenuItemClick(id)
@@ -90,19 +90,21 @@ class Header extends Component {
           style={{ background: props.customColor || '#CDCDCD' }}
         />
         <div className='Header-in'>
-          <h1
-            className='Header-logo'
-            role='button'
-            tabIndex='0'
-            onClick={this.handleLogoClick}
-          >
-            <img
-              src={props.logo || defaultLogo}
-              alt={props.name || defaultName}
-              height='48'
-            />
-            <div className='Header-activeOverlay' />
-          </h1>
+          <If cond={props.logo}>
+            <h1
+              className='Header-logo'
+              role='button'
+              tabIndex='0'
+              onClick={this.handleLogoClick}
+            >
+              <img
+                src={props.logo}
+                alt={props.name}
+                height='48'
+              />
+              <div className='Header-activeOverlay' />
+            </h1>
+          </If>
           <If cond={props.menuitems.length > 0}>
             <nav className='Header-nav'>
               <ul>
