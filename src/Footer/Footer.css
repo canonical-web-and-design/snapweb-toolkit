@@ -1,5 +1,5 @@
 .Footer {
-  padding: 20px 30px;
+  padding: 10px 30px;
   font-size: 13px;
   border-top: 1px dotted #D2D2D2;
 }
@@ -12,6 +12,7 @@
 }
 .Footer-logo {
   margin-left: 15px;
+  display: block;
 }
 .Footer-copyright {
   font-size: 12px;
