@@ -61,6 +61,7 @@ module.exports = {
         ],
         loader: 'url-loader',
         query: {
+          // limit: 10000,
           name: 'static/media/[name].[hash:8].[ext]'
         }
       },
