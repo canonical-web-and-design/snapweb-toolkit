@@ -29,7 +29,7 @@ function Footer({
           <div className='Footer-infos'>
             <p>{firstLine}</p>
             <p className='Footer-copyright'>
-              {copyright}
+              {copyright}  -  <a>{'Terms of service'}</a>
             </p>
           </div>
           {link 
