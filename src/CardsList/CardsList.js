@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import './CardsList.css'
 
 import Card from 'toolkit/Card/Card'
+import classes from 'toolkit/classes'
 
 class CardWrapper extends Component {
 
@@ -62,7 +63,11 @@ class CardsList extends Component {
     } = this.props
     return (
       <section className='CardsList'>
-        <div className='CardsList-title'>
+        <div className={classes({
+        'CardsList-title': true,
+        'CardsList-title-header': header,
+      })}
+        >
           {header || (
             <h1>
               {title}

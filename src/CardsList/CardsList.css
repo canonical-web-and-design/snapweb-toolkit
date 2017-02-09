@@ -10,6 +10,9 @@
   font-size: 32px;
   line-height: 40px;
 }
+.CardsList-title-header {
+  margin-top: 0px;
+}
 .CardsList-content {
   display: flex;
   flex-wrap: wrap;
