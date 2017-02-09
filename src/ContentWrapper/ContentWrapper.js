@@ -7,7 +7,10 @@ export default function ContentWrapper(props) {
     if (props[p]) classNames.push(`ContentWrapper-${p}`)
   })
   return (
-    <div className={classNames.join(' ')}>
+    <div 
+    className={classNames.join(' ')}
+    style={props.style}
+    >
       <div className='ContentWrapper-in'>
         {props.children}
       </div>
