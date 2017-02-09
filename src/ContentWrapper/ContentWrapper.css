@@ -2,7 +2,7 @@
   background: #F7F7F7;
 }
 .ContentWrapper-bordered {
-  border-top: 1px solid #D2D2D2;
+  border-top: 1px dotted #D2D2D2;
 }
 .ContentWrapper-in {
   max-width: 1020px;
