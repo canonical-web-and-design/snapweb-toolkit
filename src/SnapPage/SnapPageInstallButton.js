@@ -33,7 +33,7 @@ const ButtonWrapper = ({
     <div className='SnapPageInstallButton-price'>
       {label === 'free' ? 'Free' : ( label? (
         <span>
-          <span>Snap Price: </span>
+          <span>Price: </span>
           <span style={{fontWeight: 400}}>{label}</span>
         </span>
       ) : null)}
