@@ -4,7 +4,14 @@ export default function SnapPageTags(props) {
   return (
     <div className='SnapPageTags'>
       <p>
-        <span style={{marginRight: '15px'}}><a role='button'>store {'\u203A'}</a></span>
+        <span style={{marginRight: '15px'}}>
+          <a 
+          role='button'
+          onClick={props.onStoreClick}
+          >
+            store {'\u203A'}
+          </a>
+        </span>
         {props.tags.map((tagname, i) => (
           <span key={i}>
             {i? <span style={{marginRight: '15px'}}></span> : null}
