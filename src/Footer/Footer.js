@@ -12,6 +12,7 @@ function Footer({
   logo = defaultLogo,
   name = defaultName,
   link,
+  termsUrl,
 }) {
 
   const img = (
@@ -28,9 +29,15 @@ function Footer({
         <div className='Footer-in'>
           <div className='Footer-infos'>
             <p>{firstLine}</p>
-            <p className='Footer-copyright'>
-              {copyright}  -  <a>{'Terms of service'}</a>
-            </p>
+            <span className='Footer-copyright'>
+              {copyright}  -  
+              <a 
+                href={termsUrl? termsUrl: null} 
+                target='_blank' 
+                style={{textDecoration: 'none'}}
+              >
+                {'Terms of service'}</a>
+            </span>
           </div>
           {link 
             ? (
