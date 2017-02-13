@@ -53,6 +53,7 @@ class CardsList extends Component {
   }
 
   render() {
+
     const {
       children,
       title,
@@ -61,6 +62,7 @@ class CardsList extends Component {
       separator,
       header,
     } = this.props
+
     return (
       <section className='CardsList'>
         <div className={classes({
@@ -82,7 +84,7 @@ class CardsList extends Component {
             <CardWrapper
               key={card.id + i}
               card={card}
-              image={`${cardImgRootUrl}${card.image}.png`}
+              image={card.iconUrl || `${cardImgRootUrl}${card.image}.png`}
               onClick={this.onCardClick}
             />
           ))}
