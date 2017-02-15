@@ -44,7 +44,6 @@ const ButtonWrapper = ({
         style={{
           marginRight: '10px'
         }}
-        variableWidth={true}
         onClick={onClick2}
         label={buttonLabel2}
         type={type2}
@@ -57,7 +56,6 @@ const ButtonWrapper = ({
         style={{
           marginRight: '10px'
         }}
-        variableWidth={true}
         onClick={onClick3}
         label={buttonLabel3}
         type={type3}
@@ -70,7 +68,7 @@ const ButtonWrapper = ({
       label={buttonLabel}
       type={type}
       disabled={disabled}
-      variableWidth={buttonLabel2}
+      style={{ minWidth: buttonLabel2? 0 : '220px' }}
     />
   </div>
 )

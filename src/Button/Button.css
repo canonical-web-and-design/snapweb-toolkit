@@ -1,14 +1,10 @@
 .Button {
-  min-width: 220px;
   border: 1px solid #CDCDCD;
   border-radius: 3px;
   color: #333;
   background: #FFFFFF;
   outline: 0;
   text-align: center;
-}
-.Button-variable {
-  min-width: 0;
 }
 .Button > span {
   display: flex;

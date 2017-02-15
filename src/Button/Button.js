@@ -9,7 +9,6 @@ export default function Button({
   onClick,
   label,
   loading,
-  variableWidth,
   children,
   style={},
 }) {
@@ -21,7 +20,6 @@ export default function Button({
         'Button': true,
         'Button-positive': type === 'positive',
         'Button-strong': type === 'strong',
-        'Button-variable': variableWidth,
       })}
       onClick={onClick}
       style={style}
