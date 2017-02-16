@@ -1,5 +1,5 @@
 import React from 'react'
-import './Review.css'
+import css from './Review.css'
 
 import RatingStars from 'toolkit/RatingStars/RatingStars'
 import defaultAvatar from './default-avatar.png'
@@ -12,31 +12,26 @@ export default function Review({
   content,
 }) {
   return (
-    <div className='Review'>
-
-      <div className='Review-rating'>
+    <div>
+      <div className={css.rating}>
         <RatingStars color />
       </div>
-
-      <div className='Review-content'>
-
+      <div className={css.content}>
         <img
-          className='Review-image'
+          className={css.image}
           src={image || ''}
           alt=''
           width='62'
           height='62'
         />
-
-        <div className='Review-text'>
-          <div className='Review-metas'>
-            <div className='Review-author'><strong>{author}</strong></div>
-            <div className='Review-date'>{date}</div>
+        <div>
+          <div className={css.metas}>
+            <div><strong>{author}</strong></div>
+            <div className={css.date}>{date}</div>
           </div>
           <div>{content}</div>
         </div>
       </div>
-
     </div>
   )
 }
@@ -48,4 +43,3 @@ Review.PropTypes = {
   date: React.PropTypes.string,
   content: React.PropTypes.string,
 }
-

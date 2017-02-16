@@ -1,29 +1,35 @@
 import React from 'react'
-import './SnapPageSummary.css'
+import css from './SnapPageSummary.css'
 
 import If from 'toolkit/If'
 import RatingStars from 'toolkit/RatingStars/RatingStars'
 
-export default function SnapPageSummary({ icon, name, author, description, rating }) {
+export default function SnapPageSummary({
+  icon,
+  name,
+  author,
+  description,
+  rating,
+}) {
   return (
-    <div className='SnapPageSummary'>
+    <div className={css.main}>
       <img
-        className='SnapPageSummary-icon'
+        className={css.icon}
         src={icon}
         alt=''
         width='114'
         height='114'
       />
       <div>
-        <h1 className='SnapPageSummary-name'>{name}</h1>
+        <h1 className={css.name}>{name}</h1>
         <If cond={author}>
-          <p className='SnapPageSummary-author'>By {author}</p>
+          <p className={css.author}>By {author}</p>
         </If>
         <If cond={rating >= 0}>
           <RatingStars />
         </If>
         <If cond={description}>
-          <p className='SnapPageSummary-description'>{description}</p>
+          <p className={css.description}>{description}</p>
         </If>
       </div>
     </div>

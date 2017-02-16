@@ -1,21 +1,21 @@
-.SnapPageSummary {
+.main {
   display: flex;
   margin-bottom: 40px;
 }
-.SnapPageSummary-icon {
+.icon {
   margin-right: 20px;
 }
-.SnapPageSummary-name {
+.name {
   font-size: 32px;
   font-weight: 400;
   line-height: 1.2em;
 }
-.SnapPageSummary-author {
+.author {
   margin: 2px 0 10px 0;
   color: #888888;
 }
 
-.SnapPageSummary-description {
+.description {
   margin: 10px 0;
   color: #666666;
 }

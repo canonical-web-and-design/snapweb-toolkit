@@ -1,4 +1,4 @@
-.Card {
+.card {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
@@ -9,47 +9,44 @@
   color: #333;
   background: #FFF;
 }
-.Card-positive {
-  /* border-color: #3EB34F; */
-}
-.Card-main {
+.main {
   padding: 20px 10px 15px;
 }
-.Card-content > div + div {
+.content > div + div {
   height: 17px;
   line-height: 17px;
   margin: 5px 0;
 }
-.Card-content {
+.content {
   display: flex;
   flex-direction: column;
 }
-.Card-alignBottom .Card-content {
+.cardAlignBottom {
+  composes: card;
+}
+.cardAlignBottom .content {
   justify-content: flex-end;
 }
-.Card-icon {
+.icon {
   display: block;
   margin: 0 auto 15px;
 }
-.Card-name {
+.name {
   font-size: 18px;
   font-weight: 400;
 }
-.Card-author {
+.author {
   font-weight: 300;
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
   color: #888;
 }
-.Card-rating {
-  display: block;
-}
-.Card-footer {
+.footer {
   position: relative;
   padding: 10px 15px;
 }
-.Card-footer:before {
+.footer:before {
   content: '';
   position: absolute;
   top: 0;
@@ -58,22 +55,23 @@
   height: 1px;
   background: #CDCDCD;
 }
-.Card-footer-installing {
+.footerInstalling {
+  composes: footer;
   padding: 10px 10px;
 }
-.Card-footer-installing:before {
+.footerInstalling:before {
   display: none;
 }
-.Card-footer-installProgress {
+.footerInstallProgress {
   margin-top: -10px;
   margin-bottom: 4px;
 }
-.Card-action-wrapper {
+.actionWrapper {
   display: flex;
   justify-content: space-between;
   flex-direction: row-reverse;
 }
-.Card-action {
+.action {
   padding: 0 2px;
   line-height: 1.7em;
   height: 1.7em;

@@ -1,12 +1,12 @@
-.SnapPageDetails ul {
+.list {
   list-style: none;
 }
-.SnapPageDetails li {
+.item {
   display: flex;
   justify-content: space-between;
   line-height: 38px;
   border-bottom: 1px dotted #D2D2D2;
 }
-.SnapPageDetails li div:first-child {
+.item div:first-child {
   color: #888888;
 }

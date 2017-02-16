@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './SnapPageConfirm.css'
+import css from './SnapPageConfirm.css'
 
 import Button from 'toolkit/Button/Button'
 
@@ -21,14 +21,16 @@ export default class SnapPageConfirm extends Component {
 
     const buttonLabel = (() => {
       if (status === 'wait-confirm') return 'Confirm purchase'
-      if (status === 'confirming1' || status === 'confirming2') return 'Purchasing…'
+      if (status === 'confirming1' || status === 'confirming2') {
+        return 'Purchasing…'
+      }
     })()
 
     return (
-      <div className='SnapPageConfirm'>
+      <div>
 
-        <div className='SnapPageConfirm-part'>
-          <h1 className='SnapPageConfirm-part-title'>
+        <div className={css.part}>
+          <h1 className={css.partTitle}>
             Welcome, Jamie Young
           </h1>
           <p>
@@ -41,8 +43,8 @@ export default class SnapPageConfirm extends Component {
           </p>
         </div>
 
-        <div className='SnapPageConfirm-part'>
-          <h1 className='SnapPageConfirm-part-title'>
+        <div className={css.part}>
+          <h1 className={css.partTitle}>
             You’ve saved payment details
           </h1>
           <p>
@@ -51,11 +53,11 @@ export default class SnapPageConfirm extends Component {
           </p>
         </div>
 
-        <div className='SnapPageConfirm-footer'>
-          <div className='SnapPageConfirm-validateGroup'>
+        <div className={css.footer}>
+          <div className={css.validateGroup}>
             <a
               role='button'
-              className='SnapPageConfirm-validateGroup-cancel'
+              className={css.validateGroupCancel}
               onClick={onCancel}
             >
               Cancel
