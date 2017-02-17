@@ -69,11 +69,11 @@
   height: 3px;
   background: #E95420;
 }
-.Header-nav li:focus .activeOverlay,
-.Header-nav li:active .activeOverlay {
+.nav li:focus .activeOverlay,
+.nav li:active .activeOverlay {
   background: rgba(0,0,0,0.05);
 }
-.Header-profile {
+.profile {
   position: relative;
   display: flex;
   align-items: center;
@@ -83,10 +83,10 @@
   white-space: nowrap;
   outline: 0;
 }
-.Header-profile img {
+.profile img {
   margin-right: 15px;
 }
-.Header-profile:focus .activeOverlay,
-.Header-profile:active .activeOverlay {
+.profile:focus .activeOverlay,
+.profile:active .activeOverlay {
   background: rgba(0,0,0,0.05);
 }
