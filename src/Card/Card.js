@@ -27,7 +27,7 @@ export function CardName({ name }) {
 
 export function CardAuthor({ name }) {
   return (
-    <p className='Card-author'>By {name}</p>
+    <p className='Card-author'>{name}</p>
   )
 }
 

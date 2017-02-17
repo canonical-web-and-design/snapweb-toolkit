@@ -17,7 +17,7 @@ export default function SnapPageSummary({ icon, name, author, description, ratin
       <div>
         <h1 className='SnapPageSummary-name'>{name}</h1>
         <If cond={author}>
-          <p className='SnapPageSummary-author'>By {author}</p>
+          <p className='SnapPageSummary-author'>{author}</p>
         </If>
         <If cond={rating >= 0}>
           <RatingStars />
