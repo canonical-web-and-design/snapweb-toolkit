@@ -18,10 +18,10 @@ export default function ReviewList(props) {
       {(() => comments.map((comment, i) => (
         <div key={i}>
           <Review
-            author={comment.author}
-            rating={comment.rating}
-            date={comment.date}
-            content={comment.content}
+            author={props.author || comment.author}
+            rating={props.rating || comment.rating}
+            date={props.date || comment.date}
+            content={props.content || comment.content}
           />
         </div>
       )))()}
