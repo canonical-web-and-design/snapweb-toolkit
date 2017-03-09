@@ -31,23 +31,26 @@ export function CardAuthor({ name }) {
   )
 }
 
+export const CARD_MAIN_ID = 'main';
+export const CARD_ROOT_ID = 'card';
+
 class Card extends PureComponent {
 
   onCardClick = () => {
-    if (!this.props.onActionClick) {
-      this.props.onClick()
+    if (this.props.onClick) {
+      this.props.onClick(CARD_ROOT_ID)
     }
   }
 
   onMainClick = () => {
-    if (this.props.onActionClick) {
-      this.props.onClick()
+    if (this.props.onClick) {
+      this.props.onClick(CARD_MAIN_ID)
     }
   }
 
-  onActionClick = () => {
+  onActionClick = (actionId) => {
     if (this.props.onActionClick) {
-      this.props.onActionClick()
+      this.props.onActionClick(actionId)
     }
   }
 
@@ -62,12 +65,16 @@ class Card extends PureComponent {
       author,
       type,
       rating,
-      action,
+      action, // Kept for backwards compat
+      actions,
       installProgress,
     } = this.props
 
+    // slice to 2 actions for now
+    if (actions && actions.length > 0) {
+      actions = actions.slice(0:2)
+    }
     const installing = installProgress !== -1
-    // console.log(action)
 
     return (
       <div
@@ -122,24 +129,35 @@ class Card extends PureComponent {
               <ProgressBar progress={installProgress} />
             </div>
           )}
+
           <div className='Card-action-wrapper'>  
-            <div
-              className='Card-action'
-              onClick={this.onActionClick}
-            >
-              {
-                action === 'open'? 
-                  'Open'
-                 : action
-              }
-            </div>
+
             <If cond={action === 'open'}>
+              <div
+                className='Card-action'
+                onClick={this.onActionClick.bind(this, "open")}
+              >
+                'Open'
+              </div>
               <div
                 className='Card-action'
               >
                 {'Configure'}
               </div>
             </If>
+
+            <If cond={action !== 'open' && actions.length > 0}>
+            {actions.map((snap, i) => {
+              <div
+                className='Card-action'
+                onClick={this.onActionClick.bind(this, actions[i].name ? actions[i].name : toString(i))}
+              >
+                actions[i].label
+              </div>
+              
+            })}
+            </If>
+
           </div>
       </div>
     </div>
@@ -152,6 +170,7 @@ Card.propTypes = {
   rating: React.PropTypes.number,
   author: React.PropTypes.string,
   image: React.PropTypes.string,
+  actions: React.PropTypes.array,
   action: React.PropTypes.string,
   onClick: React.PropTypes.func,
   onActionClick: React.PropTypes.func,
@@ -159,6 +178,7 @@ Card.propTypes = {
 
 Card.defaultProps = {
   onClick: () => {},
+  actions: [],
   installProgress: -1,
 }
 
