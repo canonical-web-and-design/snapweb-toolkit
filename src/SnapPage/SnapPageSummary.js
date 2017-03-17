@@ -23,7 +23,7 @@ export default function SnapPageSummary({
       <div>
         <h1 className={css.name}>{name}</h1>
         <If cond={author}>
-          <p className={css.author}>By {author}</p>
+          <p className={css.author}>{author}</p>
         </If>
         <If cond={rating >= 0}>
           <RatingStars />
