@@ -1,13 +1,13 @@
 import React, { Component } from 'react'
-import './SnapPageInstallButton.css'
+import css from './SnapPageInstallButton.css'
 
 import If from 'toolkit/If'
 import Button from 'toolkit/Button/Button'
 import ProgressBar from 'toolkit/ProgressBar/ProgressBar'
 
 const ProgressBarWrapper = ({ label, progress }) => (
-  <div className='SnapPageInstallButton-progress'>
-    <div className='SnapPageInstallButton-progressLabel'>
+  <div className={css.progress}>
+    <div className={css.progressLabel}>
       {label}
     </div>
     <ProgressBar progress={progress} />
@@ -30,7 +30,7 @@ const ButtonWrapper = ({
   onClick3,
 }) => (
   <div>
-    <div className='SnapPageInstallButton-price'>
+    <div className={css.price}>
       {label === 'free' ? 'Free' : ( label? (
         <span>
           <span>Price: </span>
@@ -114,7 +114,7 @@ class SnapPageInstallButton extends Component {
     })()
 
     return (
-      <div className='SnapPageInstallButton'>
+      <div>
         {status === 'installing'? (
           <ProgressBarWrapper
             label={installProgress < 0.8? 'Downloading' : 'Installing'}

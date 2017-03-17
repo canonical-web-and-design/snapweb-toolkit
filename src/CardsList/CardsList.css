@@ -1,28 +1,28 @@
-.CardsList {
+.main {
   padding-bottom: 40px;
 }
-.CardsList-title {
-  margin-top: 45px;
-  margin-bottom: 20px;
-}
-.CardsList-title,
-.CardsList-title h1 {
+.title {
   font-size: 32px;
   line-height: 40px;
 }
-.CardsList-title-header {
+.header {
+  margin-top: 45px;
+  margin-bottom: 20px;
+}
+.headerCustom {
+  composes: title header;
   margin-top: 0px;
 }
-.CardsList-content {
+.content {
   display: flex;
   flex-wrap: wrap;
   margin: -10px -10px 0;
 }
-.CardsList .Card {
-  width: 230px;
+.cardWrapper {
+  display: flex;
   margin: 10px;
 }
-.CardsList-separator {
+.separator {
   height: 0;
   width: 100%;
   margin-top: 20px;

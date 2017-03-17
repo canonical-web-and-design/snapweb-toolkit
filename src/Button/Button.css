@@ -1,4 +1,4 @@
-.Button {
+.button {
   border: 1px solid #CDCDCD;
   border-radius: 3px;
   color: #333;
@@ -6,56 +6,56 @@
   outline: 0;
   text-align: center;
 }
-.Button > span {
+.button > span {
   display: flex;
   justify-content: center;
   align-items: center;
   padding: 6px 15px;
 }
-
-.Button[disabled],
-.Button[disabled]:active,
-.Button[disabled]:focus {
+.button[disabled],
+.button[disabled]:active,
+.button[disabled]:focus {
   color: rgba(102,102,102,0.5);
   background: transparent;
   border: 1px solid rgba(102,102,102,0.5);
 }
-.Button:active,
-.Button:focus {
+.button:active,
+.button:focus {
   color: #333;
   background: #F7F7F7;
 }
-.Button-positive {
+.buttonPositive {
+  composes: button;
   color: #FFF;
   border: 1px solid #0E8420;
   background: #0E8420;
 }
-.Button-positive:active,
-.Button-positive:focus {
+.buttonPositive:active,
+.buttonPositive:focus {
   color: #FFF;
   background: #0B6B1A;
 }
-.Button-strong {
+.buttonStrong {
+  composes: button;
   color: #FFF;
   border: 1px solid #E95420;
   background: #E95420;
 }
-.Button-strong:active,
-.Button-strong:focus {
+.buttonStrong:active,
+.buttonStrong:focus {
   color: #FFF;
   background: #D74F1E;
 }
-.Button-spinner {
+.spinner {
   width: 20px;
   height: 20px;
   margin-right: 10px;
   background: url(/spinner.png) no-repeat 0 0;
   background-size: cover;
-  animation: Button-spinner-spin 1.5s linear infinite;
+  animation: spinner-spin 1.5s linear infinite;
 }
-@keyframes Button-spinner-spin {
+@keyframes spinner-spin {
   100% {
     transform: rotate(360deg);
   }
 }
-

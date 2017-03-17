@@ -1,12 +1,12 @@
 import React from 'react'
-import './SnapPageDetails.css'
+import css from './SnapPageDetails.css'
 
 export default function SnapPageDetails(props) {
   return (
-    <div className='SnapPageDetails'>
-      <ul>
+    <div>
+      <ul className={css.list}>
         {props.items.map((item, i) => (
-          <li key={i}>
+          <li key={i} className={css.item}>
             <div>{item[0]}</div>
             <div>{item[1]}</div>
           </li>

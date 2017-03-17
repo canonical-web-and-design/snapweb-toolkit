@@ -45,11 +45,11 @@ module.exports = {
     },
   },
 
-  devtool: 'source-map',
-
   stats: {
     children: false
   },
+
+  devtool: 'source-map',
 
   module: {
     rules: [
@@ -69,14 +69,22 @@ module.exports = {
         test: /\.(js|jsx)$/,
         include: srcDir,
         exclude: /node_modules/,
-        use: 'babel-loader',
+        loader: [
+          'babel-loader',
+          'source-map-loader',
+        ],
       },
       {
         test: /\.css$/,
         include: srcDir,
         exclude: /node_modules/,
         loader: ExtractTextPlugin.extract({
-          loader: 'css-loader?sourceMap',
+          loader: 'css-loader',
+          options: {
+            sourceMap: true,
+            modules: true,
+            localIdentName: '[name]_[local]_[hash:base64:5]',
+          },
         }),
       },
     ]

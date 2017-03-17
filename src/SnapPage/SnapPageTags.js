@@ -2,12 +2,12 @@ import React from 'react'
 
 export default function SnapPageTags(props) {
   return (
-    <div className='SnapPageTags'>
+    <div>
       <p>
         <span style={{marginRight: '15px'}}>
           <a 
-          role='button'
-          onClick={props.onStoreClick}
+            role='button'
+            onClick={props.onStoreClick}
           >
             store {'\u203A'}
           </a>

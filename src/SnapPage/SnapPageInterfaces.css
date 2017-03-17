@@ -1,13 +1,13 @@
-.SnapPageInterfaces {
+.main {
   padding: 20px;
   border: 1px solid #CDCDCD;
   background: #FFFFFF;
 }
 
-.SnapPageInterfaces h2 {
+.title {
   margin-bottom: 5px;
   color: #888888;
 }
-.SnapPageInterfaces li {
+.main li {
   list-style: disc inside;
 }
