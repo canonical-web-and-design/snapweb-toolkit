@@ -2899,6 +2899,31 @@ hr {
   width: 100%;
   margin: 10px;
   justify-content: flex-end; }
+.SearchField_searchField_3vdtl {
+  width: 100%;
+  position: relative; }
+
+.SearchField_searchFieldInput_2uQk3 {
+  width: 100%;
+  margin-bottom: 0;
+  padding-left: .5rem; }
+
+.SearchField_searchFieldButton_3zPRI {
+  background-color: inherit;
+  border-color: transparent;
+  border-left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 25%;
+  height: 100%;
+  padding: .2rem;
+  margin: 0;
+  text-align: right; }
+
+.SearchField_searchFieldButton_3zPRI:hover, .SearchField_searchFieldButton_3zPRI:active {
+  background-color: inherit;
+  border-color: transparent; }
 input[type='text'], input[type='date'], input[type='datetime'], input[type='datatime-local'], input[type='month'], input[type='time'], input[type='week'], input[type='color'], input[type='number'], input[type='search'], input[type='password'], input[type='email'], input[type='url'], input[type='tel'], select, textarea {
   appearance: textfield;
   background-color: #fff;

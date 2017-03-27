@@ -24,4 +24,5 @@ module.exports = [
   'SnapPage/SnapPageSummary',
   'SnapPage/SnapPageTags',
   'ConfirmationDialog/ConfirmationDialog',
+  'SearchField/SearchField',
 ]
