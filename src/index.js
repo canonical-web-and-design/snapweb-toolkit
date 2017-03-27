@@ -1,3 +1,5 @@
+import styles from './styles/styles.scss'
+
 export { default as classes } from './classes'
 export { default as If } from './If'
 export { default as Button } from './Button/Button'
