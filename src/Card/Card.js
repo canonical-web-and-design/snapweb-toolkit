@@ -53,6 +53,7 @@ class Card extends PureComponent {
   }
 
   onActionClick = (actionId) => {
+    console.log(this.props.onActionClick)
     if (this.props.onActionClick) {
       this.props.onActionClick(actionId, this.props, this)
     }

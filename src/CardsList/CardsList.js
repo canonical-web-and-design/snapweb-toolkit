@@ -13,6 +13,7 @@ class CardWrapper extends Component {
   }
 
   onActionClick = (id, props, self) => {
+    console.log('2', this.props.onActionClick)
     if (this.props.onActionClick) {
       this.props.onActionClick(id, props, self)
     }
