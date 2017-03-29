@@ -35,22 +35,26 @@ export const CARD_MAIN_ID = 'main';
 export const CARD_ROOT_ID = 'card';
 
 class Card extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = { installProgress: -1 };
+  }
 
   onCardClick = () => {
-    if (this.props.onClick) {
-      this.props.onClick(CARD_ROOT_ID)
+    if (this.props.onCardClick) {
+      this.props.onCardClick(CARD_ROOT_ID, this.props, this)
     }
   }
 
   onMainClick = () => {
-    if (this.props.onClick) {
-      this.props.onClick(CARD_MAIN_ID)
-    }
+//    if (this.props.onClick) {
+//      this.props.onClick(CARD_MAIN_ID, this.props, this)
+//    }
   }
 
   onActionClick = (actionId) => {
     if (this.props.onActionClick) {
-      this.props.onActionClick(actionId)
+      this.props.onActionClick(actionId, this.props, this)
     }
   }
 
@@ -67,8 +71,9 @@ class Card extends PureComponent {
       rating,
       action, // Kept for backwards compat
       actions,
-      installProgress,
     } = this.props
+
+    var installProgress = this.state.installProgress;
 
     // slice to 2 actions for now
     if (actions && actions.length > 0) {
@@ -172,14 +177,13 @@ Card.propTypes = {
   image: React.PropTypes.string,
   actions: React.PropTypes.array,
   action: React.PropTypes.string,
-  onClick: React.PropTypes.func,
+  onCardClick: React.PropTypes.func,
   onActionClick: React.PropTypes.func,
 }
 
 Card.defaultProps = {
-  onClick: () => {},
-  actions: [],
-  installProgress: -1,
+  onCardClick: () => {},
+  actions: []
 }
 
 export default Card

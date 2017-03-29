@@ -6,15 +6,15 @@ import classes from 'toolkit/classes'
 
 class CardWrapper extends Component {
 
-  onClick = (id) => {
-    if (this.props.onClick) {
-      this.props.onClick(id)
+  onCardClick = (id, props, self) => {
+    if (this.props.onCardClick) {
+      this.props.onCardClick(id, props, self)
     }
   }
 
-  onActionClick = (id) => {
+  onActionClick = (id, props, self) => {
     if (this.props.onActionClick) {
-      this.props.onActionClick(id)
+      this.props.onActionClick(id, props, self)
     }
   }
 
@@ -47,7 +47,7 @@ class CardWrapper extends Component {
         actions={actions}
         type={type}
         image={image}
-        onClick={this.onClick}
+        onCardClick={this.onCardClick}
         onActionClick={this.onActionClick}
         rating={rating}
         positive={id === 'add'}
@@ -60,12 +60,12 @@ class CardWrapper extends Component {
 
 class CardsList extends Component {
 
-  onCardClick = (id) => {
-    this.props.onCardClick(id)
+  onCardClick = (id, props, self) => {
+    this.props.onCardClick(id, props, self)
   }
 
-  onActionClick = (id) => {
-    this.props.onActionClick(id)
+  onActionClick = (id, props, self) => {
+    this.props.onActionClick(id, props, self)
   }
 
   render() {
@@ -102,7 +102,7 @@ class CardsList extends Component {
               key={card.id + i}
               card={card}
               image={card.iconUrl || `${cardImgRootUrl}${card.image}.png`}
-              onClick={this.onCardClick}
+              onCardClick={this.onCardClick}
               onActionClick={this.onActionClick}
             />
           ))}
