@@ -75,10 +75,6 @@ class Card extends PureComponent {
 
     var installProgress = this.state.installProgress;
 
-    // slice to 2 actions for now
-    if (actions && actions.length > 0) {
-      actions = actions.slice(0:2)
-    }
     const installing = installProgress !== -1
 
     const mainClass = alignBottom? 'cardAlignBottom' : 'card'
@@ -141,17 +137,12 @@ class Card extends PureComponent {
               <div className={css.action}>Configure</div>
             </If>
 
-            <If cond={action !== 'open' && actions.length > 0}>
-            {actions.map((snap, i) => {
-              <div
-                className={css.action}
-                onClick={this.onActionClick.bind(this, actions[i].name ? actions[i].name : toString(i))}
-              >
-                actions[i].label
-              </div>
-              
-            })}
-            </If>
+            <div
+              className={css.action}
+              onClick={this.onActionClick.bind(this, action)}
+            >
+             {action}
+            </div>
 
           </div>
       </div>
