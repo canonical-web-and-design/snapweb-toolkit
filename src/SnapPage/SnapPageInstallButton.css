@@ -1,12 +1,12 @@
-.SnapPageInstallButton-price {
+.price {
   text-align: right;
   margin-bottom: 10px;
   font-size: 22px;
 }
-.SnapPageInstallButton-progress {
+.progress {
   width: 308px;
 }
-.SnapPageInstallButton-progressLabel {
+.progressLabel {
   margin-bottom: 10px;
   color: #666666;
 }

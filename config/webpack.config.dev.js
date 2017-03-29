@@ -45,18 +45,18 @@ module.exports = {
     },
   },
 
-  devtool: 'source-map',
-
   stats: {
     children: false
   },
+
+  devtool: 'source-map',
 
   module: {
     rules: [
       {
         exclude: [
           /\.(js|jsx)$/,
-          /\.css$/,
+          /\.(css|scss)$/,
           /node_modules/,
         ],
         loader: 'url-loader',
@@ -69,16 +69,37 @@ module.exports = {
         test: /\.(js|jsx)$/,
         include: srcDir,
         exclude: /node_modules/,
-        use: 'babel-loader',
+        loader: [
+          'babel-loader',
+          'source-map-loader',
+        ],
       },
       {
-        test: /\.css$/,
-        include: srcDir,
-        exclude: /node_modules/,
+        include: path.join(srcDir, 'styles', 'styles.scss'),
         loader: ExtractTextPlugin.extract({
-          loader: 'css-loader?sourceMap',
-        }),
+          loader: ['css-loader', 'sass-loader']
+        })
       },
+      {
+        test: /\.(css|scss)$/,
+        include: srcDir,
+        exclude: [
+          /styles/,
+          /node_modules/,
+        ],
+        loader: ExtractTextPlugin.extract({
+          loader: [{
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              modules: true,
+              localIdentName: '[name]_[local]_[hash:base64:5]',
+            },
+          }, {
+            loader: 'sass-loader',
+          }]
+        })
+      }, 
     ]
   },
 

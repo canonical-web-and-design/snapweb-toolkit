@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './SnapPageLogin.css'
+import css from './SnapPageLogin.css'
 
 import Button from 'toolkit/Button/Button'
 
@@ -56,18 +56,18 @@ export default class SnapPageLogin extends Component {
     return (
       <div>
 
-        <div className='SnapPageLogin-header'>
-          <h1 className='SnapPageLogin-title'>
+        <div className={css.header}>
+          <h1 className={css.title}>
             {title}
           </h1>
-          <div className='SnapPageLogin-step'>
+          <div className={css.step}>
             <strong>Step {step}</strong> / 3
           </div>
         </div>
 
         <form autoComplete='off'>
-          <div className='SnapPageLogin-form'>
-            <div className='SnapPageLogin-field'>
+          <div className={css.form}>
+            <div className={css.field}>
               <label htmlFor='email'>Please type your email:</label>
               <input
                 id='email'
@@ -76,7 +76,7 @@ export default class SnapPageLogin extends Component {
                 disabled={waiting}
               />
             </div>
-            <div className='SnapPageLogin-field'>
+            <div className={css.field}>
               <label htmlFor='password'>
                 I am a returning user and my password is:
               </label>
@@ -89,8 +89,8 @@ export default class SnapPageLogin extends Component {
           </div>
         </form>
 
-        <div className='SnapPageLogin-footer'>
-          <div className='SnapPageLogin-link'>
+        <div className={css.footer}>
+          <div className={css.link}>
             <a
               role='button'
               className='external'
@@ -98,10 +98,10 @@ export default class SnapPageLogin extends Component {
               {linkLabel}
             </a>
           </div>
-          <div className='SnapPageLogin-validateGroup'>
+          <div className={css.validateGroup}>
             <a
               role='button'
-              className='SnapPageLogin-validateGroup-cancel'
+              className={css.validateGroupCancel}
               onClick={onCancel}
             >
               Cancel

@@ -1,5 +1,5 @@
 import React from 'react'
-import './Link.css'
+import css from './Link.css'
 
 import If from 'toolkit/If'
 import Icon from 'toolkit/Icon/Icon'
@@ -13,15 +13,12 @@ export default function Link({ color, label, external, onClick }) {
     <a
       role='button'
       onClick={onClick}
-      className={classes({
-        'Link': true,
-        'Link-external': external,
-      })}
+      className={css.link}
       style={style}
     >
       {label}
       <If cond={external}>
-        <span className='Link-external-icon'>
+        <span className={css.externalIcon}>
           <Icon name='external' />
         </span>
       </If>

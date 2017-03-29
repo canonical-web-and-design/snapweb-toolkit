@@ -1,54 +1,54 @@
-.SnapPageLogin-header {
+.header {
   display: flex;
   justify-content: space-between;
   margin-bottom: 30px;
 }
-.SnapPageLogin-title {
+.title {
   font-size: 21px;
 }
-.SnapPageLogin-step {
+.step {
   color: #666666;
   font-size: 21px;
   line-height: 1.7em;
 }
-.SnapPageLogin-form {
+.form {
   display: flex;
   margin-bottom: 20px;
 }
-.SnapPageLogin-field {
+.field {
   width: 50%;
   margin-left: 24px;
 }
-.SnapPageLogin-field:first-child {
+.field:first-child {
   margin-left: 0;
 }
-.SnapPageLogin-field label {
+.field label {
   display: block;
   margin-bottom: 5px;
 }
-.SnapPageLogin-field input {
+.field input {
   width: 100%;
   border: 1px solid #CDCDCD;
   border-radius: 3px;
   color: rgba(51, 51, 51, 1);
   padding: 10px;
 }
-.SnapPageLogin-field input[disabled] {
+.field input[disabled] {
   color: rgba(51, 51, 51, 0.3);
   background: #FFF;
 }
-.SnapPageLogin-footer {
+.footer {
   display: flex;
   justify-content: space-between;
 }
-.SnapPageLogin-link {
+.link {
   display: flex;
   align-items: center;
 }
-.SnapPageLogin-validateGroup {
+.validateGroup {
   display: flex;
   align-items: center;
 }
-.SnapPageLogin-validateGroup-cancel {
+.validateGroupCancel {
   margin-right: 20px;
 }

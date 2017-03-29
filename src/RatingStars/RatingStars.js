@@ -7,7 +7,7 @@ export default function RatingStars(props) {
   const size = props.color? [290/2, 42/2] : [104, 18]
   return (
     <img
-      className='Card-rating'
+      style={{ display: 'block' }}
       src={src}
       alt=''
       width={size[0]}

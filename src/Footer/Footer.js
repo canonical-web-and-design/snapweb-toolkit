@@ -1,5 +1,5 @@
 import React from 'react'
-import './Footer.css'
+import css from './Footer.css'
 
 import defaultLogo from './assets/logo.png'
 const defaultName = 'Ubuntu'
@@ -16,30 +16,32 @@ function Footer({
 }) {
 
   const img = (
-    <img className='Footer-logo'
+    <img className={css.logo}
       src={logo}
       alt={name}
       height='48'
     />
   )
-  
+
   return (
-    <footer className='Footer'>
+    <footer className={css.main}>
       {children || (
-        <div className='Footer-in'>
-          <div className='Footer-infos'>
-            <p>{firstLine}</p>
-            <span className='Footer-copyright'>
-              {copyright}  -  
-              <a 
-                href={termsUrl? termsUrl: null} 
-                target='_blank' 
+        <div className={css.content}>
+          <div className={css.infos}>
+            {firstLine && (
+              <p>{firstLine}</p>
+            )}
+            <span className={css.copyright}>
+              {copyright}  -
+              <a
+                href={termsUrl? termsUrl: null}
+                target='_blank'
                 style={{textDecoration: 'none'}}
               >
                 {'Terms of service'}</a>
             </span>
           </div>
-          {link 
+          {link
             ? (
               <a href={link} target='_blank'>
                 {img}

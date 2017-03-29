@@ -1,7 +1,5 @@
 import React from 'react'
-import './Button.css'
-
-import classes from 'toolkit/classes'
+import css from './Button.css'
 
 export default function Button({
   disabled,
@@ -12,21 +10,20 @@ export default function Button({
   children,
   style={},
 }) {
+  let btnClass = 'button'
+  if (type === 'positive') btnClass = 'buttonPositive'
+  if (type === 'strong') btnClass = 'buttonStrong'
   return (
     <button
+      className={css[btnClass]}
       disabled={disabled}
       type='button'
-      className={classes({
-        'Button': true,
-        'Button-positive': type === 'positive',
-        'Button-strong': type === 'strong',
-      })}
       onClick={onClick}
       style={style}
     >
       <span>
         {loading
-          ? <span className='Button-spinner' />
+          ? <span className={css.spinner} />
           : null
         }
         {children || (<span>{label}</span>)}

@@ -1,17 +1,17 @@
 import React from 'react'
-import './ContentWrapper.css'
+import css from './ContentWrapper.css'
+import classes from 'toolkit/classes'
 
 export default function ContentWrapper(props) {
-  const classNames = ['ContentWrapper']
-  ;['background', 'bordered'].forEach(p => {
-    if (props[p]) classNames.push(`ContentWrapper-${p}`)
-  })
   return (
     <div 
-    className={classNames.join(' ')}
-    style={props.style}
+      className={classes({
+        [css.background]: props.background,
+        [css.bordered]: props.bordered,
+      })}
+      style={props.style}
     >
-      <div className='ContentWrapper-in'>
+      <div className={css.content}>
         {props.children}
       </div>
     </div>

@@ -1,5 +1,5 @@
 import React, { PureComponent } from 'react'
-require('./Card.css')
+import css from './Card.css'
 
 import classes from 'toolkit/classes'
 import If from 'toolkit/If'
@@ -10,7 +10,7 @@ import ProgressBar from 'toolkit/ProgressBar/ProgressBar'
 export function CardIcon({ image }) {
   return (
     <img
-      className='Card-icon'
+      className={css.icon}
       src={image}
       alt=''
       width='114'
@@ -21,13 +21,13 @@ export function CardIcon({ image }) {
 
 export function CardName({ name }) {
   return (
-    <p className='Card-name'>{name}</p>
+    <p className={css.name}>{name}</p>
   )
 }
 
 export function CardAuthor({ name }) {
   return (
-    <p className='Card-author'>{name}</p>
+    <p className={css.author}>{name}</p>
   )
 }
 
@@ -62,7 +62,6 @@ class Card extends PureComponent {
 
     const {
       children,
-      positive,
       alignBottom,
       image,
       name,
@@ -81,25 +80,22 @@ class Card extends PureComponent {
     }
     const installing = installProgress !== -1
 
+    const mainClass = alignBottom? 'cardAlignBottom' : 'card'
     return (
       <div
-        className={classes({
-          'Card': true,
-          'Card-positive': positive,
-          'Card-alignBottom': alignBottom,
-        })}
+        className={css[mainClass]}
         role='button'
         onClick={this.onCardClick}
       >
         <div
-          className='Card-main'
+          className={css.main}
           onClick={this.onMainClick}
         >
           <CardIcon
             image={image}
           />
           {children || (
-            <div className='Card-content'>
+            <div className={css.content}>
               <div>
                 <CardName
                   name={name}
@@ -124,37 +120,30 @@ class Card extends PureComponent {
           )}
         </div>
         <div
-          className={classes({
-            'Card-footer': true,
-            'Card-footer-installing': installing,
-          })}
+          className={css[installing? 'footerInstalling' : 'footer']}
         >
           {installing && (
-            <div className='Card-footer-installProgress'>
+            <div className={css.footerInstallProgress}>
               <ProgressBar progress={installProgress} />
             </div>
           )}
-
-          <div className='Card-action-wrapper'>  
+          <div className={css.actionWrapper}>
 
             <If cond={action === 'open'}>
               <div
-                className='Card-action'
-                onClick={this.onActionClick.bind(this, "open")}
+                className={css.action}
+                onClick={this.onActionClick}
               >
-                'Open'
+                {action === 'open'?  'Open' : action}
               </div>
-              <div
-                className='Card-action'
-              >
-                {'Configure'}
-              </div>
+
+              <div className={css.action}>Configure</div>
             </If>
 
             <If cond={action !== 'open' && actions.length > 0}>
             {actions.map((snap, i) => {
               <div
-                className='Card-action'
+                className={css.action}
                 onClick={this.onActionClick.bind(this, actions[i].name ? actions[i].name : toString(i))}
               >
                 actions[i].label

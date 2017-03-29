@@ -1,10 +1,10 @@
 import React from 'react'
-import './SnapPageInterfaces.css'
+import css from './SnapPageInterfaces.css'
 
 export default function SnapPageInterfaces(props) {
   return (
-    <div className='SnapPageInterfaces'>
-      <h2>Interfaces:</h2>
+    <div className={css.main}>
+      <h2 className={css.title}>Interfaces:</h2>
       <ul>
         {props.items.map((item, i) => (
           <li key={i}>{item}</li>

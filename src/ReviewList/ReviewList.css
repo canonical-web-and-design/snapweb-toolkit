@@ -1,10 +1,10 @@
-.ReviewList {
+.main {
   padding-top: 35px;
   padding-right: calc(308px + 122px);
 }
-.ReviewList h2 {
+.title {
   font-size: 22px;
 }
-.ReviewList > div {
+.reviewWrapper {
   margin-top: 25px;
 }

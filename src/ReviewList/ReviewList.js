@@ -1,5 +1,5 @@
 import React from 'react'
-import './ReviewList.css'
+import css from './ReviewList.css'
 import Review from 'toolkit/Review/Review'
 
 export default function ReviewList(props) {
@@ -13,10 +13,10 @@ export default function ReviewList(props) {
   ]
 
   return (
-    <div className='ReviewList'>
-      <h2>Reviews</h2>
+    <div className={css.main}>
+      <h2 className={css.title}>Reviews</h2>
       {(() => comments.map((comment, i) => (
-        <div key={i}>
+        <div key={i} className={css.reviewWrapper}>
           <Review
             author={props.author || comment.author}
             rating={props.rating || comment.rating}

@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './CardsList.css'
+import css from './CardsList.css'
 
 import Card from 'toolkit/Card/Card'
 import classes from 'toolkit/classes'
@@ -79,32 +79,35 @@ class CardsList extends Component {
       header,
     } = this.props
 
+    const headerClass = header? css.headerCustom : css.header
+
+    const items = children || cards.map((card, i) => (
+      <CardWrapper
+        key={card.id + i}
+        card={card}
+        image={card.iconUrl || `${cardImgRootUrl}${card.image}.png`}
+        onCardClick={this.onCardClick}
+        onActionClick={this.onActionClick}
+      />
+    ))
+
     return (
-      <section className='CardsList'>
-        <div className={classes({
-        'CardsList-title': true,
-        'CardsList-title-header': header,
-      })}
-        >
+      <section className={css.main}>
+        <div className={headerClass}>
           {header || (
-            <h2>
+            <h2 className={css.title}>
               {title}
               {separator? (
-                <div className='CardsList-separator' />
+                <div className={css.separator} />
               ) : null}
             </h2>
           )}
         </div>
-
-        <div className='CardsList-content'>
-          {children || cards.map((card, i) => (
-            <CardWrapper
-              key={card.id + i}
-              card={card}
-              image={card.iconUrl || `${cardImgRootUrl}${card.image}.png`}
-              onCardClick={this.onCardClick}
-              onActionClick={this.onActionClick}
-            />
+        <div className={css.content}>
+          {items.map((item, i) => (
+            <div key={i} className={css.cardWrapper}>
+              {item}
+            </div>
           ))}
         </div>
       </section>

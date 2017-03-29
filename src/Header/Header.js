@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import './Header.css'
+import css from './Header.css'
 
 import If from 'toolkit/If'
 
@@ -49,11 +49,11 @@ class MenuItem extends Component {
         <span>{name}</span>
         {current && (
           <div
-            className='Header-nav-currentLine'
+            className={css.navCurrentLine}
             style={currentLineStyles}
           />
         )}
-        <div className='Header-activeOverlay' />
+        <div className={css.activeOverlay} />
       </li>
     )
   }
@@ -82,17 +82,17 @@ class Header extends Component {
     } : {}
     return (
       <header
-        className='Header'
+        className={css.main}
         style={styles}
       >
         <div
-          className='Header-underline'
+          className={css.underline}
           style={{ background: props.customColor || '#CDCDCD' }}
         />
-        <div className='Header-in'>
+        <div className={css.content}>
           <If cond={props.logo}>
             <h1
-              className='Header-logo'
+              className={css.logo}
               role='button'
               tabIndex='0'
               onClick={this.handleLogoClick}
@@ -102,11 +102,11 @@ class Header extends Component {
                 alt={props.name}
                 height='48'
               />
-              <div className='Header-activeOverlay' />
+              <div className={css.activeOverlay} />
             </h1>
           </If>
           <If cond={props.menuitems.length > 0}>
-            <nav className='Header-nav'>
+            <nav className={css.nav}>
               <ul>
                 {(props.menuitems || []).map(item => (
                   <MenuItem
@@ -122,14 +122,14 @@ class Header extends Component {
             </nav>
           </If>
           <div
-            className='Header-profile'
+            className={css.profile}
             role='button'
             tabIndex='0'
             onClick={this.handleProfileClick}
           >
             <img width='24' height='24' src={avatar} alt='' />
             <span>{props.profilename || defaultProfileName}</span>
-            <div className='Header-activeOverlay' />
+            <div className={css.activeOverlay} />
           </div>
         </div>
       </header>

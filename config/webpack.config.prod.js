@@ -54,7 +54,7 @@ module.exports = {
       {
         exclude: [
           /\.(js|jsx)$/,
-          /\.css$/,
+          /\.(css|scss)$/,
           /node_modules/,
         ],
         loader: 'url-loader',
@@ -70,11 +70,33 @@ module.exports = {
         use: 'babel-loader',
       },
       {
-        test: /\.css$/,
-        include: srcDir,
-        exclude: /node_modules/,
+        include: path.join(srcDir, 'styles', 'styles.scss'),
         loader: ExtractTextPlugin.extract({
-          loader: 'css-loader',
+          loader: ['css-loader', 'sass-loader']
+        })
+      },
+      {
+        test: /\.(css|scss)$/,
+        include: srcDir,
+        exclude: [
+          /styles/,
+          /node_modules/,
+        ],
+        loader: ExtractTextPlugin.extract({
+          loader: [{
+            loader: 'css-loader',
+            options: {
+              sourceMap: true,
+              modules: true,
+              minimize: true,
+
+              // 10 chars should be collision safe,
+              // but you can increase this number to make it safer.
+              localIdentName: '[hash:base64:10]',
+            }
+          }, {
+            loader: 'sass-loader'
+          }]
         }),
       },
     ]

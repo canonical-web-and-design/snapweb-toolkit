@@ -1,3 +1,5 @@
+import styles from './styles/styles.scss'
+
 export { default as classes } from './classes'
 export { default as If } from './If'
 export { default as Button } from './Button/Button'
@@ -21,3 +23,6 @@ export { default as SnapPageLogin } from './SnapPage/SnapPageLogin'
 export { default as SnapPagePurchase } from './SnapPage/SnapPagePurchase'
 export { default as SnapPageSummary } from './SnapPage/SnapPageSummary'
 export { default as SnapPageTags } from './SnapPage/SnapPageTags'
+export { default as ConfirmationDialog } from './ConfirmationDialog/ConfirmationDialog'
+export { default as SearchField } from './SearchField/SearchField'
+export { default as StoreSections } from './Store/StoreSections'
