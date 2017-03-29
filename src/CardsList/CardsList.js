@@ -60,7 +60,6 @@ class CardWrapper extends Component {
 }
 
 class CardsList extends Component {
-
   onCardClick = (id, props, self) => {
     this.props.onCardClick(id, props, self)
   }
@@ -74,9 +73,9 @@ class CardsList extends Component {
     const {
       children,
       title,
-      cards,
       cardImgRootUrl,
       separator,
+      cards,
       header,
     } = this.props
 
