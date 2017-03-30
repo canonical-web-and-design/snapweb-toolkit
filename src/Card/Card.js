@@ -31,23 +31,36 @@ export function CardAuthor({ name }) {
   )
 }
 
+export const CARD_MAIN_ID = 'main';
+export const CARD_ROOT_ID = 'card';
+
 class Card extends PureComponent {
+  constructor(props) {
+    super(props);
+    this.state = { installProgress: -1 };
+  }
 
-  onCardClick = () => {
-    if (!this.props.onActionClick) {
-      this.props.onClick()
+  onCardClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (this.props.onCardClick) {
+      this.props.onCardClick(CARD_ROOT_ID, this.props, this)
     }
   }
 
-  onMainClick = () => {
-    if (this.props.onActionClick) {
-      this.props.onClick()
+  onMainClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
+    if (this.props.onCardClick) {
+      this.props.onCardClick(CARD_ROOT_ID, this.props, this)
     }
   }
 
-  onActionClick = () => {
+  onActionClick = (actionId, e) => {
+    e.preventDefault();
+    e.stopPropagation();
     if (this.props.onActionClick) {
-      this.props.onActionClick()
+      this.props.onActionClick(actionId, this.props, this)
     }
   }
 
@@ -61,9 +74,11 @@ class Card extends PureComponent {
       author,
       type,
       rating,
-      action,
-      installProgress,
+      action, // Kept for backwards compat
+      actions,
     } = this.props
+
+    var installProgress = this.state.installProgress;
 
     const installing = installProgress !== -1
 
@@ -115,15 +130,25 @@ class Card extends PureComponent {
             </div>
           )}
           <div className={css.actionWrapper}>
-            <div
-              className={css.action}
-              onClick={this.onActionClick}
-            >
-              {action === 'open'?  'Open' : action}
-            </div>
+
             <If cond={action === 'open'}>
+              <div
+                className={css.action}
+                onClick={this.onActionClick}
+              >
+                {action === 'open'?  'Open' : action}
+              </div>
+
               <div className={css.action}>Configure</div>
             </If>
+
+            <div
+              className={css.action}
+              onClick={this.onActionClick.bind(this, action)}
+            >
+             {action}
+            </div>
+
           </div>
       </div>
     </div>
@@ -136,14 +161,15 @@ Card.propTypes = {
   rating: React.PropTypes.number,
   author: React.PropTypes.string,
   image: React.PropTypes.string,
+  actions: React.PropTypes.array,
   action: React.PropTypes.string,
-  onClick: React.PropTypes.func,
+  onCardClick: React.PropTypes.func,
   onActionClick: React.PropTypes.func,
 }
 
 Card.defaultProps = {
-  onClick: () => {},
-  installProgress: -1,
+  onCardClick: () => {},
+  actions: []
 }
 
 export default Card

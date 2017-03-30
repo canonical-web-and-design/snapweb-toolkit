@@ -1,6 +1,9 @@
 import React from 'react'
 
 export default function ProgressBar({ progress }) {
+  if (progress > 1 || progress < 0) {
+    progress = 0
+  }
   return (
     <div style={{
       position: 'relative',
