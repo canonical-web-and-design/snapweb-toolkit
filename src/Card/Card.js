@@ -47,13 +47,12 @@ class Card extends PureComponent {
   }
 
   onMainClick = () => {
-//    if (this.props.onClick) {
-//      this.props.onClick(CARD_MAIN_ID, this.props, this)
-//    }
+    if (this.props.onCardClick) {
+      this.props.onCardClick(CARD_ROOT_ID, this.props, this)
+    }
   }
 
   onActionClick = (actionId) => {
-    console.log(this.props.onActionClick)
     if (this.props.onActionClick) {
       this.props.onActionClick(actionId, this.props, this)
     }
