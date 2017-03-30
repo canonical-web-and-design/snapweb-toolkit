@@ -40,19 +40,25 @@ class Card extends PureComponent {
     this.state = { installProgress: -1 };
   }
 
-  onCardClick = () => {
+  onCardClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     if (this.props.onCardClick) {
       this.props.onCardClick(CARD_ROOT_ID, this.props, this)
     }
   }
 
-  onMainClick = () => {
+  onMainClick = (e) => {
+    e.preventDefault();
+    e.stopPropagation();
     if (this.props.onCardClick) {
       this.props.onCardClick(CARD_ROOT_ID, this.props, this)
     }
   }
 
-  onActionClick = (actionId) => {
+  onActionClick = (actionId, e) => {
+    e.preventDefault();
+    e.stopPropagation();
     if (this.props.onActionClick) {
       this.props.onActionClick(actionId, this.props, this)
     }
