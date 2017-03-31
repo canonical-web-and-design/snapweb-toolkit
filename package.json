@@ -39,5 +39,8 @@
     "url-loader": "^0.5.7",
     "vanilla-framework": "1.0.1",
     "webpack": "2.2"
+  },
+  "dependencies": {
+    "react": "^15.4.2"
   }
 }
