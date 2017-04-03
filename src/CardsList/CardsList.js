@@ -32,18 +32,11 @@ class CardWrapper extends Component {
       installProgress = -1,
     } = card
 
-    // TODO remove & hoist logic
-    const finalAction = (
-      type? action : (
-        installProgress > -1 ? '' : (action || 'open')
-      )
-    )
-
     return (
       <Card
         name={name}
         author={author}
-        action={finalAction}
+        action={action}
         actions={actions}
         type={type}
         image={image}
