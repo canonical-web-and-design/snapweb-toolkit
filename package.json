@@ -30,7 +30,7 @@
     "babel-loader": "6.4.1",
     "babel-plugin-react-css-modules": "2.8.0",
     "babel-preset-react-app": "2.2.0",
-    "css-loader": "0.28.11",
+    "css-loader": "2.1.1",
     "extract-text-webpack-plugin": "2.1.2",
     "file-loader": "0.11.2",
     "node-sass": "4.12.0",
