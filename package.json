@@ -28,7 +28,7 @@
     "babel": "6.23.0",
     "babel-core": "6.26.3",
     "babel-loader": "6.4.1",
-    "babel-plugin-react-css-modules": "2.8.0",
+    "babel-plugin-react-css-modules": "5.2.4",
     "babel-preset-react-app": "2.2.0",
     "css-loader": "0.28.11",
     "extract-text-webpack-plugin": "2.1.2",
