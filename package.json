@@ -38,7 +38,7 @@
     "source-map-loader": "0.2.4",
     "url-loader": "0.6.2",
     "vanilla-framework": "1.8.1",
-    "webpack": "2.7.0"
+    "webpack": "4.30.0"
   },
   "dependencies": {
     "react": "15.6.2"
